@@ -13,8 +13,10 @@ spec:
       {{- include "arpchart.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+      {{- with .Values.podAnnotations }}
       annotations:
-        k8s.v1.cni.cncf.io/networks: extnet1
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       labels:
         {{- include "arpchart.selectorLabels" . | nindent 8 }}
     spec:
@@ -28,12 +30,21 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
-            capabilities:
-              add: ["NET_ADMIN"]
-            privileged: true
+            {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          command: ["sh", "-c", "tail -f /dev/null"]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

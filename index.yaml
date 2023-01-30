@@ -3,9 +3,9 @@ entries:
   accesschart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-30T10:04:56.974759758+01:00"
+    created: "2023-01-30T17:25:05.426100391+01:00"
     description: A Helm chart for Kubernetes
-    digest: d9054ae36b120688dd9c3fccb4fb79f95f5b8e7a797f6192ac83ebedf5cdb94c
+    digest: 5a85bed6a0ece7e7bc07dedce503122ad98a676367e475778819578741f4b422
     name: accesschart
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   arpchart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-30T10:04:56.97551451+01:00"
+    created: "2023-01-30T17:25:05.426359952+01:00"
     description: A Helm chart for Kubernetes
-    digest: 37dc7bc7e1c4e8640d4ce76a971455d85581b0d5bdf80380bef192cb84590d1a
+    digest: e30b7529a232782e744dd643d4766793e28a2a80593bac561daf000990d6ed61
     name: arpchart
     type: application
     urls:
@@ -25,12 +25,12 @@ entries:
   cpechart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-01-30T10:04:56.976170669+01:00"
+    created: "2023-01-30T17:25:05.426590456+01:00"
     description: A Helm chart for Kubernetes
-    digest: 104e7caca840cd802f59cad5d603b0806db639adbd9fb5bfacab8cdd66305f54
+    digest: 9767e8902ee3a9222539a0ad00922d2f4c3f06a5ce54813a0957d19c9fd18d2a
     name: cpechart
     type: application
     urls:
     - https://oscarlpujol.github.io/repo-rdsv/cpechart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-30T10:04:56.973724844+01:00"
+generated: "2023-01-30T17:25:05.425679935+01:00"
